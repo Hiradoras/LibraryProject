@@ -1,15 +1,22 @@
 package com.company.Interfaces.Impls;
 
+import com.company.Classes.Book;
 import com.company.Classes.Student;
 import com.company.Interfaces.StudentGenerator;
 
+import java.util.List;
+
 public class StudentGeneratorHelper implements StudentGenerator {
+
+    private Book book;
     @Override
     public Student generateStudent() {
+
         Student student1 = new Student();
         student1.setFirstName("Ahmet");
         student1.setLastName("Kozal");
         student1.setPhone("+903284239");
+        student1.booksOfStudent.add(book);
 
         Student student2 = new Student();
         student2.setFirstName("Hamza");

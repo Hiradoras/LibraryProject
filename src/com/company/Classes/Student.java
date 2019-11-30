@@ -1,9 +1,13 @@
 package com.company.Classes;
 
-public class Student extends User{
+import java.util.ArrayList;
+import java.util.List;
+
+public class Student {
     private String firstName;
     private String lastName;
     private String phone;
+    public List<Book> booksOfStudent = new ArrayList<>();
 
     public String getFirstName() {
         return firstName;

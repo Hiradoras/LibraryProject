@@ -1,5 +1,10 @@
 package com.company.Classes;
 
+import com.company.Interfaces.Impls.BookGeneratorHelper;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Book {
     private String bookName;
     private String author;
