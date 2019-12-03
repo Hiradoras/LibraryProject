@@ -4,6 +4,7 @@ import com.company.Classes.Book;
 import com.company.Classes.Student;
 import com.company.Interfaces.StudentGenerator;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class StudentGeneratorHelper implements StudentGenerator {
@@ -16,7 +17,6 @@ public class StudentGeneratorHelper implements StudentGenerator {
         student1.setFirstName("Ahmet");
         student1.setLastName("Kozal");
         student1.setPhone("+903284239");
-        student1.booksOfStudent.add(book);
 
         Student student2 = new Student();
         student2.setFirstName("Hamza");
@@ -32,6 +32,7 @@ public class StudentGeneratorHelper implements StudentGenerator {
         student4.setFirstName("Ihsan");
         student4.setLastName("Gokalp");
         student4.setPhone("62454");
+
         return null;
     }
 }

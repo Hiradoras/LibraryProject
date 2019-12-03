@@ -4,10 +4,12 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student extends User {
+public class Student {
     private String firstName;
     private String lastName;
     private String phone;
+    public List<Student> allStudents;
+
     public List<Book> booksOfStudent;
 
     public String getFirstName() {

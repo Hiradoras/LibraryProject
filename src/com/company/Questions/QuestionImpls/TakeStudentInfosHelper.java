@@ -1,14 +1,14 @@
 package com.company.Questions.QuestionImpls;
 
 import com.company.Classes.Student;
-import com.company.Questions.TakeStudentsInfos;
+import com.company.Questions.TakeStudentInfos;
 
 import java.util.Scanner;
 
-public class TakeStudentsInfosHelper implements TakeStudentsInfos {
-    String fName;
+public class TakeStudentInfosHelper implements TakeStudentInfos {
+
     @Override
-    public Student askForInformation() {
+    public Student getInfos() {
         Student student = new Student();
         Scanner sc = new Scanner(System.in);
         System.out.print("WHAT IS YOUR NAME: ");

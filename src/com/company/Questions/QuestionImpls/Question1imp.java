@@ -1,11 +1,9 @@
 package com.company.Questions.QuestionImpls;
 
-import com.company.Classes.User;
-import com.company.Main;
+import com.company.Classes.Student;
+import com.company.Interfaces.Impls.StudentGeneratorHelper;
 import com.company.Questions.Question1;
-import com.company.Questions.TakeStudentsInfos;
 
-import javax.swing.text.StyledEditorKit;
 import java.util.Scanner;
 
 public class Question1imp implements Question1 {
@@ -15,13 +13,7 @@ public class Question1imp implements Question1 {
     @Override
     public String getIfStudentOrAdmin(String answer) {
         if (answer.equals("STUDENT")){
-            TakeStudentsInfosHelper takeInfos = new TakeStudentsInfosHelper();
-            takeInfos.askForInformation();
-            Scanner sc = new Scanner(System.in);
-            System.out.print("WILL YOU GIVE A BOOK[1] OR TAKE A BOOK[2]?\n" +
-                    "TYPE 1 TO GIVE A BOOK AND 2 TO TAKE A BOOK: ");
-            String a = sc.nextLine();
-            new TakeOrGiveBookHelper().askForTakeOrGiveBook(a);
+            new StudentQuestionsHelper().askToStudent();
         }
         if (answer.equals("ADMIN")){
             System.out.println("YOU R AN ADMIN");
