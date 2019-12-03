@@ -1,7 +1,8 @@
 package com.company.Questions;
 
-import java.util.Scanner;
+import com.company.Classes.User;
+import com.company.Main;
 
 public interface Question1 {
-    String askQuestion1(String a);
+    String getIfStudentOrAdmin(String answer);
 }

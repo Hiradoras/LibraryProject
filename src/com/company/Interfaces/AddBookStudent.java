@@ -6,5 +6,5 @@ import com.company.Classes.Student;
 import java.util.List;
 
 public interface AddBookStudent {
-    public List<Book> addBook(Book book);
+    List<Book> addBook(Book book);
 }

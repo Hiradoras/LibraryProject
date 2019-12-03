@@ -1,34 +1,20 @@
 package com.company;
 
-import com.company.Questions.ImplsForQuestions.IfStudentHelper;
-import com.company.Questions.ImplsForQuestions.Question1Helper;
-import com.company.Questions.ImplsForQuestions.QuestionForStudentHelper;
+import com.company.Interfaces.Impls.StudentGeneratorHelper;
+import com.company.Questions.QuestionImpls.Question1imp;
+
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        String s="";
-        boolean checkIfSorA;
-        new Question1Helper().askQuestion1(s);
-        while(new IfStudentHelper().isStudent(checkIfSorA=true)){
-            new QuestionForStudentHelper().askToStudent();
-            checkIfSorA=false;
-            if (checkIfSorA==false)break;
-        }
-        while (new IfStudentHelper().isAdmin(true)){
 
-        }
-        while (new IfStudentHelper().notRight(true)){
-            new Question1Helper().askQuestion1(s);
-            new IfStudentHelper().notRight(false);
-        }
-//        if (new IfStudentHelper().isStudent(true)){
-//            new QuestionForStudentHelper().askToStudent();
-//        }
-//        if (new IfStudentHelper().isAdmin(true)){
-//
-//        }
-//        if (new IfStudentHelper().notRight(true)){
-//            new Question1Helper().askQuestion1(s);
-//        }
+    public static void main(String[] args) {
+        System.out.println(new StudentGeneratorHelper().generateStudent().getFirstName());
+        String answer= "";
+        Scanner sc = new Scanner(System.in);
+        System.out.print("ARE YOU STUDENT OR TEACHER\n{type student for student and admin for admin}\n: ");
+        answer = sc.nextLine().toUpperCase();
+        new Question1imp().getIfStudentOrAdmin(answer);
     }
+
+
 }

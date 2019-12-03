@@ -1,13 +1,14 @@
 package com.company.Classes;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student {
+public class Student extends User {
     private String firstName;
     private String lastName;
     private String phone;
-    public List<Book> booksOfStudent = new ArrayList<>();
+    public List<Book> booksOfStudent;
 
     public String getFirstName() {
         return firstName;
