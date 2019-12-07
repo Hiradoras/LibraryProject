@@ -8,9 +8,8 @@ public class Student {
     private String firstName;
     private String lastName;
     private String phone;
-    public List<Student> allStudents;
 
-    public List<Book> booksOfStudent;
+    public List<Book> books;
 
     public String getFirstName() {
         return firstName;

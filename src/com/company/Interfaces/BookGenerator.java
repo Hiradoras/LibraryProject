@@ -5,5 +5,5 @@ import com.company.Classes.Book;
 import java.util.List;
 
 public interface BookGenerator {
-    Book generateBooks();
+    List<Book> generateBooks();
 }

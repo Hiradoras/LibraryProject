@@ -7,9 +7,6 @@ import com.company.Questions.Question1;
 import java.util.Scanner;
 
 public class Question1imp implements Question1 {
-    String bookControl;
-    Boolean b;
-
     @Override
     public String getIfStudentOrAdmin(String answer) {
         if (answer.equals("STUDENT")){

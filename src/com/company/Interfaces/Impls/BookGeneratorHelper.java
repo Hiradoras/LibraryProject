@@ -7,10 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookGeneratorHelper implements BookGenerator {
-    private Book book;
     @Override
-    public Book generateBooks() {
-        book = new Book();
+    public List<Book>  generateBooks() {
         List<Book> allBooks = new ArrayList<>();
 
         Book bookSherlockHolmes = new Book();
@@ -38,6 +36,10 @@ public class BookGeneratorHelper implements BookGenerator {
         bookWarAndPeace.setAuthor("Tolstoy");
         allBooks.add(bookWarAndPeace);
 
-        return null;
+        Book bookLordOfTheRings = new Book();
+        bookLordOfTheRings.setBookName("Lord of The Rings (6)");
+        bookLordOfTheRings.setAuthor("J.R.R. TOLKIEN");
+        allBooks.add(bookLordOfTheRings);
+        return allBooks;
     }
 }
