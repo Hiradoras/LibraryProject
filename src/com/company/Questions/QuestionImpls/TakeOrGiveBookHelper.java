@@ -1,6 +1,7 @@
 package com.company.Questions.QuestionImpls;
 
 import com.company.Classes.Book;
+import com.company.Interfaces.BookGenerator;
 import com.company.Interfaces.Impls.BookGeneratorHelper;
 import com.company.Questions.Question1;
 import com.company.Questions.TakeOrGiveBook;
@@ -14,16 +15,17 @@ public class TakeOrGiveBookHelper implements TakeOrGiveBook {
     public String askForTakeOrGiveBook(String a) {
 
         if (a.equals("1")){
-            List<Book> books = new BookGeneratorHelper().generateBooks();
-            for(int i = 0; i < books.size(); i++) {
-                System.out.println(books.get(i).getBookName());
+            BookGenerator bookGenerator = new BookGeneratorHelper();
+            bookGenerator.generateBooks();
+            List<Book> books = bookGenerator.generateBooks();
+            for (Book book : books) {
+                System.out.println(book.getBookName());
             }
             Scanner sc = new Scanner(System.in);
             System.out.print("PRESS THE NUMBER OF BOOK THAT YOU WANT TO TAKE PLEASE: ");
             String answer = sc.nextLine();
-            if (answer=="1"){
-                System.out.println(books.get(0));
-            }
+            new TakeBookHelper().takeTheBook(answer);
+
         }
         if (a.equals("2")){
             System.out.println(a);

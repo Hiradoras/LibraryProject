@@ -14,37 +14,38 @@ public class StudentGeneratorHelper implements StudentGenerator {
         List<Student> allStudents = new ArrayList<>();
         BookGenerator bookHelper = new BookGeneratorHelper();
         List<Book> bookAll = bookHelper.generateBooks();
+        books.addAll(bookAll);
+
         Student student1 = new Student();
         student1.setFirstName("Ahmet");
         student1.setLastName("Kozal");
         student1.setPhone("+903284239");
+        student1.booksList.add(books.get(0));
         allStudents.add(student1);
-//        student1.books.add(bookAll.get(1));
-//        student1.books.add(bookAll.get(2));
+
 
         Student student2 = new Student();
         student2.setFirstName("Hamza");
         student2.setLastName("Akkara");
         student2.setPhone("23423");
+        student2.booksList.add(books.get(3));
         allStudents.add(student2);
-//        student2.books.add(books.get(3));
-//        student2.books.add(books.get(1));
+
 
         Student student3 = new Student();
         student3.setFirstName("Enes");
         student3.setLastName("Abi");
         student3.setPhone("223432");
+        student3.booksList.add(books.get(5));
         allStudents.add(student3);
-//        student3.books.add(books.get(5));
-//        student3.books.add(books.get(2));
+
 
         Student student4 = new Student();
         student4.setFirstName("Ihsan");
         student4.setLastName("Gokalp");
         student4.setPhone("62645");
+        student4.booksList.add(books.get(4));
         allStudents.add(student4);
-//        student4.books.add(books.get(4));
-//        student4.books.add(books.get(3));
 
         return allStudents;
     }
