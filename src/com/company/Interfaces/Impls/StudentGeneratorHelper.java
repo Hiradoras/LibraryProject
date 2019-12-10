@@ -10,17 +10,17 @@ import java.util.List;
 
 public class StudentGeneratorHelper implements StudentGenerator {
     @Override
-    public List<Student> generateStudent(List<Book> books) {
+    public List<Student> generateStudent() {
         List<Student> allStudents = new ArrayList<>();
         BookGenerator bookHelper = new BookGeneratorHelper();
         List<Book> bookAll = bookHelper.generateBooks();
-        books.addAll(bookAll);
 
         Student student1 = new Student();
         student1.setFirstName("Ahmet");
         student1.setLastName("Kozal");
         student1.setPhone("+903284239");
-        student1.booksList.add(books.get(0));
+        student1.booksList.add(bookAll.get(0));
+        student1.booksList.add(bookAll.get(3));
         allStudents.add(student1);
 
 
@@ -28,7 +28,8 @@ public class StudentGeneratorHelper implements StudentGenerator {
         student2.setFirstName("Hamza");
         student2.setLastName("Akkara");
         student2.setPhone("23423");
-        student2.booksList.add(books.get(3));
+        student2.booksList.add(bookAll.get(3));
+        student2.booksList.add(bookAll.get(4));
         allStudents.add(student2);
 
 
@@ -36,7 +37,10 @@ public class StudentGeneratorHelper implements StudentGenerator {
         student3.setFirstName("Enes");
         student3.setLastName("Abi");
         student3.setPhone("223432");
-        student3.booksList.add(books.get(5));
+        student3.booksList.add(bookAll.get(1));
+        student3.booksList.add(bookAll.get(5));
+
+
         allStudents.add(student3);
 
 
@@ -44,8 +48,16 @@ public class StudentGeneratorHelper implements StudentGenerator {
         student4.setFirstName("Ihsan");
         student4.setLastName("Gokalp");
         student4.setPhone("62645");
-        student4.booksList.add(books.get(4));
+        student4.booksList.add(bookAll.get(3));
+        student4.booksList.add(bookAll.get(4));
         allStudents.add(student4);
+
+        Student student5 = new Student();
+        student5.setFirstName("Omer");
+        student5.setLastName("Falan");
+        student5.setPhone("62645");
+        student5.booksList.add(bookAll.get(1));
+        allStudents.add(student5);
 
         return allStudents;
     }

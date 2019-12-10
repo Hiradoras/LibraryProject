@@ -4,6 +4,7 @@ import com.company.Classes.Book;
 import com.company.Classes.Student;
 import com.company.Interfaces.Impls.StudentGeneratorHelper;
 import com.company.Interfaces.StudentGenerator;
+import com.company.Questions.ForAdmin;
 import com.company.Questions.Question1;
 
 import java.util.ArrayList;
@@ -13,9 +14,8 @@ import java.util.Scanner;
 public class Question1imp implements Question1 {
     @Override
     public String getIfStudentOrAdmin(String answer) {
-        List<Book> books = new ArrayList<>();
         if (answer.equals("STUDENT")){
-
+            StudentGenerator studentGenerator = new StudentGeneratorHelper();
             Student student = new Student();
             Scanner scanner = new Scanner(System.in);
             System.out.print("WHAT IS YOUR NAME: ");
@@ -24,8 +24,7 @@ public class Question1imp implements Question1 {
             student.setLastName(scanner.nextLine());
             System.out.print("WHAT IS YOUR PHONE NUMBER: ");
             student.setPhone(scanner.nextLine());
-            StudentGenerator studentGenerator = new StudentGeneratorHelper();
-            studentGenerator.generateStudent(books).add(student);
+            studentGenerator.generateStudent().add(student);
             System.out.print("DEAR "+student.getFirstName()+" WILL YOU GIVE A BOOK[1] OR TAKE A BOOK[2]?\n" +
                     "TYPE 1 TO GIVE A BOOK AND 2 TO TAKE A BOOK: ");
             String a = scanner.nextLine();
@@ -34,10 +33,15 @@ public class Question1imp implements Question1 {
         if (answer.equals("ADMIN")){
             System.out.println("ALL STUDENT LIST BELOW: ");
             StudentGenerator studentGenerator = new StudentGeneratorHelper();
-            for(int i = 0; i < studentGenerator.generateStudent(books).size(); i++) {
-                System.out.println(studentGenerator.generateStudent(books).get(i).getFirstName()+" "
-                        +studentGenerator.generateStudent(books).get(i).getLastName());
+            for(int i = 0; i < studentGenerator.generateStudent().size(); i++) {
+                System.out.println(studentGenerator.generateStudent().get(i).getFirstName()+" "
+                        +studentGenerator.generateStudent().get(i).getLastName());
             }
+            Scanner sc = new Scanner(System.in);
+            System.out.print("TYPE ONE STUDENT'S NAME TO SEE INFOS ABOUT:");
+            String name = sc.nextLine().toUpperCase();
+            ForAdmin forAdmin = new ForAdminHelper();
+            forAdmin.seeStudentInfo(name);
         }
         if (!answer.equals("ADMIN")&&!answer.equals("STUDENT")){
             Scanner sc = new Scanner(System.in);

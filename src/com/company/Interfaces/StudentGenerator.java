@@ -6,5 +6,6 @@ import com.company.Classes.Student;
 import java.util.List;
 
 public interface StudentGenerator {
-    List<Student> generateStudent(List<Book> books);
+    List<Student> generateStudent();
 }
+

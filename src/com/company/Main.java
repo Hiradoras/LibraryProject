@@ -16,7 +16,7 @@ public class Main {
         bookHelper.generateBooks();
         List<Book> books = bookHelper.generateBooks();
         StudentGenerator studentGenerator = new StudentGeneratorHelper();
-        studentGenerator.generateStudent(books);
+        studentGenerator.generateStudent();
         String answer;
         Scanner sc = new Scanner(System.in);
         System.out.print("ARE YOU STUDENT OR TEACHER\n{type student for student and admin for admin}\n: ");

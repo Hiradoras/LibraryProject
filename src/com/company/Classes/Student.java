@@ -8,14 +8,6 @@ public class Student {
     private String firstName;
     private String lastName;
     private String phone;
-
-    public List<Book> getBooksList() {
-        for (Book book: booksList){
-            System.out.println(book.getBookName()+" "+book.getAuthor());
-        }
-        return booksList;
-    }
-
     public List<Book> booksList = new ArrayList<>();
 
     public String getFirstName() {

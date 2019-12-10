@@ -20,11 +20,13 @@ public class SureAboutTakeHelper implements SureAboutTake {
         if (a.equals("1")){
             bookGenerator.generateBooks();
             System.out.println("YOU TOOK THE BOOK--> "+bookGenerator.generateBooks().get(0).getBookName());
+            studentGenerator.generateStudent().get(0).booksList.add(bookGenerator.generateBooks().get(0));
             Question1 question1 = new Question1imp();
             Scanner sc = new Scanner(System.in);
-            System.out.print("ARE YOU STUDENT OR TEACHER\n{type student for student and admin for admin}\n: ");
-            String answer = sc.nextLine().toUpperCase();
-            new Question1imp().getIfStudentOrAdmin(answer);
+            System.out.print("DEAR STUDENT WILL YOU GIVE A BOOK[1] OR TAKE A BOOK[2]?\n" +
+                    "TYPE 1 TO GIVE A BOOK AND 2 TO TAKE A BOOK: ");
+            String b = sc.nextLine();
+            new TakeOrGiveBookHelper().askForTakeOrGiveBook(b);
 
         }
         if (a.equals("2")){
