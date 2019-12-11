@@ -33,6 +33,11 @@ public class SureAboutTakeHelper implements SureAboutTake {
             new TakeOrGiveBookHelper().askForTakeOrGiveBook("1");
 
         }
+        if (!a.equals("1")&&!a.equals("2")){
+            Scanner sc = new Scanner(System.in);
+            System.out.println("PLEASE TYPE [1] OR [2] ONLY");
+            sureAbout(sc.nextLine());
+        }
         return null;
     }
 }

@@ -34,11 +34,11 @@ public class Question1imp implements Question1 {
             System.out.println("ALL STUDENT LIST BELOW: ");
             StudentGenerator studentGenerator = new StudentGeneratorHelper();
             for(int i = 0; i < studentGenerator.generateStudent().size(); i++) {
-                System.out.println(studentGenerator.generateStudent().get(i).getFirstName()+" "
+                System.out.println((i+1)+". "+studentGenerator.generateStudent().get(i).getFirstName()+" "
                         +studentGenerator.generateStudent().get(i).getLastName());
             }
             Scanner sc = new Scanner(System.in);
-            System.out.print("TYPE ONE STUDENT'S NAME TO SEE INFOS ABOUT:");
+            System.out.print("TYPE ONE STUDENT'S NUMBER TO SEE INFOS ABOUT:");
             String name = sc.nextLine().toUpperCase();
             ForAdmin forAdmin = new ForAdminHelper();
             forAdmin.seeStudentInfo(name);
