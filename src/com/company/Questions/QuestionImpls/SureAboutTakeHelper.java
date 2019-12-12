@@ -1,42 +1,46 @@
 package com.company.Questions.QuestionImpls;
 
 import com.company.Classes.Book;
+import com.company.Classes.Student;
 import com.company.Interfaces.BookGenerator;
 import com.company.Interfaces.Impls.BookGeneratorHelper;
 import com.company.Interfaces.Impls.StudentGeneratorHelper;
 import com.company.Interfaces.StudentGenerator;
 import com.company.Questions.Question1;
 import com.company.Questions.SureAboutTake;
+import com.company.Questions.TakeOrGiveBook;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class SureAboutTakeHelper implements SureAboutTake {
     BookGenerator bookGenerator = new BookGeneratorHelper();
-    List<Book> books = bookGenerator.generateBooks();
-    StudentGenerator studentGenerator = new StudentGeneratorHelper();
     @Override
-    public String sureAbout(String a) {
+    public String sureAbout(String a,String bookCode,List<Student> students, List<Book> books) {
         if (a.equals("1")){
+            TakeOrGiveBook takeOrGiveBook = new TakeOrGiveBookHelper();
+            int takenBook = Integer.parseInt(bookCode)-1;
             bookGenerator.generateBooks();
-            System.out.println("YOU TOOK THE BOOK--> "+bookGenerator.generateBooks().get(0).getBookName());
-            studentGenerator.generateStudent().get(0).booksList.add(bookGenerator.generateBooks().get(0));
-            Question1 question1 = new Question1imp();
+            System.out.println("YOU TOOK THE BOOK--> "+books.get(takenBook).getBookName());
+            students.get(5).booksList.add(books.get(takenBook));
+            books.remove(takenBook);
             Scanner sc = new Scanner(System.in);
-            System.out.print("DEAR STUDENT WILL YOU GIVE A BOOK[1] OR TAKE A BOOK[2]?\n" +
+            System.out.print("DEAR "+students.get(5).getFirstName()+ " STUDENT WILL YOU GIVE A BOOK[1] OR TAKE A BOOK[2]?\n" +
                     "TYPE 1 TO GIVE A BOOK AND 2 TO TAKE A BOOK: ");
             String b = sc.nextLine();
-            new TakeOrGiveBookHelper().askForTakeOrGiveBook(b);
-
+            takeOrGiveBook.askForTakeOrGiveBook(b,students,books);
         }
         if (a.equals("2")){
-            new TakeOrGiveBookHelper().askForTakeOrGiveBook("1");
-
+            TakeOrGiveBook takeOrGiveBook = new TakeOrGiveBookHelper();
+//            for (int i =0; i<students.get(students.size()-1).booksList.size();i++ ){
+//                System.out.println(students.get(students.size()-1).booksList.get(i).getBookName());
+//            }
+            takeOrGiveBook.askForTakeOrGiveBook("1",students,books);
         }
         if (!a.equals("1")&&!a.equals("2")){
             Scanner sc = new Scanner(System.in);
             System.out.println("PLEASE TYPE [1] OR [2] ONLY");
-            sureAbout(sc.nextLine());
+            sureAbout(sc.nextLine(),bookCode,students,books);
         }
         return null;
     }
