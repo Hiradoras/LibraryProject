@@ -14,11 +14,9 @@ import java.util.Scanner;
 
 public class AnswerAdminHelper implements AnswerAdmin {
     @Override
-    public String forAdmin() {
+    public void forAdmin() {
         StudentGenerator studentGenerator = new StudentGeneratorHelper();
-        BookGenerator bookGenerator = new BookGeneratorHelper();
         List<Student> students = studentGenerator.generateStudent();
-        List<Book> books = bookGenerator.generateBooks();
 
         System.out.println("ALL STUDENT LIST BELOW: ");
         for (int i = 0; i < students.size(); i++) {
@@ -30,7 +28,5 @@ public class AnswerAdminHelper implements AnswerAdmin {
         String name = sc.nextLine().toUpperCase();
         ForAdmin forAdmin = new ForAdminHelper();
         forAdmin.seeStudentInfo(name);
-
-        return null;
     }
 }

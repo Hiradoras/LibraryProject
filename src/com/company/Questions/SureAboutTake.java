@@ -6,5 +6,5 @@ import com.company.Classes.Student;
 import java.util.List;
 
 public interface SureAboutTake {
-    String sureAbout(String a, String bookCode, List<Student> students, List<Book> books);
+    void sureAbout(String a, String bookCode, List<Student> students, List<Book> books);
 }

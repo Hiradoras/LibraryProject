@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class AnswerStudentHelper implements AnswerStudent {
 
     @Override
-    public String forStudent() {
+    public void forStudent() {
         StudentGenerator studentGenerator = new StudentGeneratorHelper();
         BookGenerator bookGenerator = new BookGeneratorHelper();
         List<Student> students = studentGenerator.generateStudent();
@@ -34,6 +34,5 @@ public class AnswerStudentHelper implements AnswerStudent {
         String a = scanner.nextLine();
         TakeOrGiveBook takeOrGiveBook = new TakeOrGiveBookHelper();
         takeOrGiveBook.askForTakeOrGiveBook(a, students,books);
-        return null;
     }
 }

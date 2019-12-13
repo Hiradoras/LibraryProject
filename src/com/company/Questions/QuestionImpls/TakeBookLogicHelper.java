@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 public class TakeBookLogicHelper implements TakeBookLogic {
     @Override
-    public String takeBookLogicly(String a,List<Student> students,List<Book> books) {
+    public void takeBookLogicly(String a,List<Student> students,List<Book> books) {
         boolean numeric = true;
         numeric = a.matches("-?\\d+(\\.\\d+)?");
         if (numeric){
@@ -38,6 +38,5 @@ public class TakeBookLogicHelper implements TakeBookLogic {
             String answer = scA.nextLine();
             new TakeBookLogicHelper().takeBookLogicly(answer,students,books);
         }
-        return null;
     }
 }

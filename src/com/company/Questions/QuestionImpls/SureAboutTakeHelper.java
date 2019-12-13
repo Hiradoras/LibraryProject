@@ -4,9 +4,6 @@ import com.company.Classes.Book;
 import com.company.Classes.Student;
 import com.company.Interfaces.BookGenerator;
 import com.company.Interfaces.Impls.BookGeneratorHelper;
-import com.company.Interfaces.Impls.StudentGeneratorHelper;
-import com.company.Interfaces.StudentGenerator;
-import com.company.Questions.Question1;
 import com.company.Questions.SureAboutTake;
 import com.company.Questions.TakeOrGiveBook;
 
@@ -16,7 +13,7 @@ import java.util.Scanner;
 public class SureAboutTakeHelper implements SureAboutTake {
     BookGenerator bookGenerator = new BookGeneratorHelper();
     @Override
-    public String sureAbout(String a,String bookCode,List<Student> students, List<Book> books) {
+    public void sureAbout(String a,String bookCode,List<Student> students, List<Book> books) {
         if (a.equals("1")){
             TakeOrGiveBook takeOrGiveBook = new TakeOrGiveBookHelper();
             int takenBook = Integer.parseInt(bookCode)-1;
@@ -42,6 +39,5 @@ public class SureAboutTakeHelper implements SureAboutTake {
             System.out.println("PLEASE TYPE [1] OR [2] ONLY");
             sureAbout(sc.nextLine(),bookCode,students,books);
         }
-        return null;
     }
 }

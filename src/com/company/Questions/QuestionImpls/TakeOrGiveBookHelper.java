@@ -4,10 +4,7 @@ import com.company.Classes.Book;
 import com.company.Classes.Student;
 import com.company.Interfaces.BookGenerator;
 import com.company.Interfaces.Impls.BookGeneratorHelper;
-import com.company.Interfaces.Impls.StudentGeneratorHelper;
-import com.company.Interfaces.StudentGenerator;
 import com.company.Questions.GiveBook;
-import com.company.Questions.Question1;
 import com.company.Questions.TakeOrGiveBook;
 
 import java.util.List;
@@ -16,7 +13,7 @@ import java.util.Scanner;
 public class TakeOrGiveBookHelper implements TakeOrGiveBook {
 
     @Override
-    public String askForTakeOrGiveBook(String a, List<Student> students, List<Book>books) {
+    public void askForTakeOrGiveBook(String a, List<Student> students, List<Book>books) {
         if (a.equals("1")) {
             if (books.size()==0){
                 System.out.println("YOU TOOK ALL BOOKS IN THE LIBRARY. YOU NEED TO GIVE SOME BOOKS BACK. YOU WILL " +
@@ -64,6 +61,5 @@ public class TakeOrGiveBookHelper implements TakeOrGiveBook {
             askForTakeOrGiveBook(b, students,books);
             //new TakeOrGiveBookHelper().askForTakeOrGiveBook(b);
         }
-        return null;
     }
 }

@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class GiveBookHelper implements GiveBook {
     @Override
-    public Book giveBook(String n, List<Student> students,List<Book> books) {
+    public void giveBook(String n, List<Student> students,List<Book> books) {
         boolean numeric = true;
         numeric = n.matches("-?\\d+(\\.\\d+)?");
         if (numeric){
@@ -38,8 +38,5 @@ public class GiveBookHelper implements GiveBook {
             System.out.println("!!!PLEASE TYPE NUMBER ONLY!!!");
             new TakeOrGiveBookHelper().askForTakeOrGiveBook("2",students,books);
         }
-
-
-        return null;
     }
 }
