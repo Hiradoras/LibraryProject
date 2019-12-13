@@ -5,6 +5,7 @@ import com.company.Interfaces.BookGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class BookGeneratorHelper implements BookGenerator {
     @Override
@@ -41,5 +42,11 @@ public class BookGeneratorHelper implements BookGenerator {
         bookLordOfTheRings.setAuthor("J.R.R. TOLKIEN");
         allBooks.add(bookLordOfTheRings);
         return allBooks;
+    }
+    @Override
+    public Book getRandomBook() {
+        Random random = new Random();
+        Integer bookIndex = random.nextInt(generateBooks().size());
+        return generateBooks().get(bookIndex);
     }
 }

@@ -1,9 +1,5 @@
 package com.company.Questions.QuestionImpls;
-
-import com.company.Classes.Book;
 import com.company.Classes.Student;
-import com.company.Interfaces.BookGenerator;
-import com.company.Interfaces.Impls.BookGeneratorHelper;
 import com.company.Interfaces.Impls.StudentGeneratorHelper;
 import com.company.Interfaces.StudentGenerator;
 import com.company.Questions.AnswerAdmin;
@@ -19,10 +15,13 @@ public class AnswerAdminHelper implements AnswerAdmin {
         List<Student> students = studentGenerator.generateStudent();
 
         System.out.println("ALL STUDENT LIST BELOW: ");
-        for (int i = 0; i < students.size(); i++) {
-            System.out.println((i + 1) + ". " + studentGenerator.generateStudent().get(i).getFirstName() + " "
-                    + studentGenerator.generateStudent().get(i).getLastName());
+
+        Integer counter = 1;
+        for (Student student :students) {
+            System.out.println("["+counter+"] "+student.getFirstName()+" "+student.getLastName());
+            counter++;
         }
+
         Scanner sc = new Scanner(System.in);
         System.out.print("TYPE ONE STUDENT'S NUMBER TO SEE INFOS ABOUT:");
         String name = sc.nextLine().toUpperCase();

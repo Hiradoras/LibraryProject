@@ -6,7 +6,6 @@ import com.company.Interfaces.Impls.StudentGeneratorHelper;
 import com.company.Interfaces.StudentGenerator;
 import com.company.Questions.ForAdmin;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -17,16 +16,18 @@ public class ForAdminHelper implements ForAdmin {
 
         boolean numeric = true;
         numeric = a.matches("-?\\d+(\\.\\d+)?");
-        if (numeric){
+        if (numeric) {
             int intA = Integer.parseInt(a);
-            if(intA-1>=sG.generateStudent().size()){
+            if (intA - 1 >= sG.generateStudent().size()) {
                 // EGER ISTENEN ELEMENT YOKSA
                 System.out.println("!!!PLEASE TYPE ONLY NUMBER THAT YOU SEE!!!");
                 System.out.println("ALL STUDENT LIST BELOW: ");
                 StudentGenerator studentGenerator = new StudentGeneratorHelper();
-                for(int i = 0; i < studentGenerator.generateStudent().size(); i++) {
-                    System.out.println((i+1)+". "+studentGenerator.generateStudent().get(i).getFirstName()+" "
-                            +studentGenerator.generateStudent().get(i).getLastName());
+                Integer counter = 1;
+                for (Student student : studentGenerator.generateStudent()
+                ) {
+                    System.out.println("[" + counter + "] " + student.getFirstName() + " " + student.getLastName());
+                    counter++;
                 }
                 Scanner sc = new Scanner(System.in);
                 System.out.print("TYPE ONE STUDENT'S NUMBER TO SEE INFOS ABOUT:");
@@ -35,19 +36,22 @@ public class ForAdminHelper implements ForAdmin {
                 forAdmin.seeStudentInfo(name);
 
 
-            }else{
-                System.out.println(sG.generateStudent().get(intA-1).getFirstName()+" "+sG.generateStudent().get(intA-1).getLastName()+"\n"+
-                        "Phone: "+sG.generateStudent().get(intA-1).getPhone()+"\nBOOKS THAT STUDENT HAS: ");
-                for(int i = 0; i < sG.generateStudent().get(intA-1).booksList.size(); i++) {
-                    System.out.println(i+1+". "+sG.generateStudent().get(0).booksList.get(i).getBookName()+" b: "+
-                            sG.generateStudent().get(0).booksList.get(i)
-                                    .getAuthor());
+            } else {
+                System.out.println(sG.generateStudent().get(intA - 1).getFirstName() + " " + sG.generateStudent().get(intA - 1).getLastName() + "\n" +
+                        "Phone: " + sG.generateStudent().get(intA - 1).getPhone() + "\nBOOKS THAT STUDENT HAS: ");
+
+                Integer count = 1;
+                for (Book book : sG.generateStudent().get(intA - 1).booksList) {
+                    System.out.println("["+count+"] "+book.getBookName()+" by "+book.getAuthor());
+                    count++;
                 }
                 System.out.println("ALL STUDENT LIST BELOW: ");
                 StudentGenerator studentGenerator = new StudentGeneratorHelper();
-                for(int i = 0; i < studentGenerator.generateStudent().size(); i++) {
-                    System.out.println((i+1)+". "+studentGenerator.generateStudent().get(i).getFirstName()+" "
-                            +studentGenerator.generateStudent().get(i).getLastName());
+                Integer counter = 1;
+                for (Student student : studentGenerator.generateStudent()
+                ) {
+                    System.out.println("[" + counter + "] " + student.getFirstName() + " " + student.getLastName());
+                    counter++;
                 }
                 Scanner sc = new Scanner(System.in);
                 System.out.print("TYPE ONE STUDENT'S NUMBER TO SEE INFOS ABOUT:");
@@ -56,14 +60,15 @@ public class ForAdminHelper implements ForAdmin {
                 forAdmin.seeStudentInfo(name);
 
             }
-        }
-        else{
+        } else {
             System.out.println("!!!PLEASE TYPE ONLY NUMBER THAT YOU SEE!!!");
             System.out.println("ALL STUDENT LIST BELOW: ");
             StudentGenerator studentGenerator = new StudentGeneratorHelper();
-            for(int i = 0; i < studentGenerator.generateStudent().size(); i++) {
-                System.out.println((i+1)+". "+studentGenerator.generateStudent().get(i).getFirstName()+" "
-                        +studentGenerator.generateStudent().get(i).getLastName());
+            Integer counter = 1;
+            for (Student student : studentGenerator.generateStudent()
+            ) {
+                System.out.println("[" + counter + "] " + student.getFirstName() + " " + student.getLastName());
+                counter++;
             }
             Scanner sc = new Scanner(System.in);
             System.out.print("TYPE ONE STUDENT'S NUMBER TO SEE INFOS ABOUT:");

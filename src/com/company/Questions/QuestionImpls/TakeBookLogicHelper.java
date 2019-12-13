@@ -29,8 +29,11 @@ public class TakeBookLogicHelper implements TakeBookLogic {
         }
         else{
             System.out.println("!!!TYPE ONLY NUMBER PLEASE!!!");
-            for(int i = 0; i < books.size(); i++) {
-                System.out.println("["+(i+1)+"]"+books.get(i).getBookName()+" by: "+books.get(i).getAuthor());
+            Integer counter = 1;
+            for (Book book: books
+                 ) {
+                System.out.println("["+counter+"] "+book.getBookName()+" by:"+book.getAuthor());
+                counter++;
             }
             Scanner scA = new Scanner(System.in);
             System.out.print("DEAR"+students.get(5).getFirstName()+" PRESS THE NUMBER OF THE BOOK THAT YOU WANT TO TAKE PLEASE: ");
