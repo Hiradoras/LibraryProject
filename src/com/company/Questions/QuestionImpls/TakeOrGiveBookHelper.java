@@ -27,14 +27,13 @@ public class TakeOrGiveBookHelper implements TakeOrGiveBook {
                     System.out.println("[" + (i + 1) + "]" + books.get(i).getBookName() + " by: " + books.get(i).getAuthor());
                 }
                 Scanner sc = new Scanner(System.in);
-                System.out.print("DEAR "+students.get(5).getFirstName()+" PRESS THE NUMBER OF THE BOOK THAT YOU WANT TO TAKE PLEASE: ");
+                System.out.print("DEAR "+students.get(students.size()-1).getFirstName()+" PRESS THE NUMBER OF THE BOOK THAT YOU WANT TO TAKE PLEASE: ");
                 String answer = sc.nextLine();
                 new TakeBookLogicHelper().takeBookLogicly(answer,students,books);
             }
         }
         if (a.equals("2")) {
-            if(students.get(5).booksList.size()==0){
-                // EGER ISTENEN ELEMENT YOKSA
+            if(students.get(students.size()-1).booksList.size()==0){
                 System.out.println("!!!YOU DON'T HAVE ANY BOOK!!!");
                 Scanner newSc = new Scanner(System.in);
                 System.out.print("DEAR " + students.get(students.size()-1).getFirstName() + " WILL YOU GIVE A BOOK[1] OR TAKE A BOOK[2]?\n" +
@@ -43,9 +42,9 @@ public class TakeOrGiveBookHelper implements TakeOrGiveBook {
             }
             else{
                 System.out.println("BOOKS THAT YOU HAVE: ");
-                for (int i =0; i<students.get(5).booksList.size();i++){
-                    System.out.println("["+(i+1)+"]"+students.get(5).booksList.get(i).getBookName()+" by "+
-                            students.get(5).booksList.get(i).getAuthor());
+                for (int i =0; i<students.get(students.size()-1).booksList.size();i++){
+                    System.out.println("["+(i+1)+"]"+students.get(students.size()-1).booksList.get(i).getBookName()+" by "+
+                            students.get(students.size()-1).booksList.get(i).getAuthor());
                 }
                 Scanner sc = new Scanner(System.in);
                 System.out.print("TYPE NUMBER OF THE BOOK THAT YOU WANT TO GIVE: ");
@@ -59,7 +58,6 @@ public class TakeOrGiveBookHelper implements TakeOrGiveBook {
                     "\nTYPE 1 TO GIVE A BOOK AND 2 TO TAKE A BOOK: ");
             String b = sc.nextLine();
             askForTakeOrGiveBook(b, students,books);
-            //new TakeOrGiveBookHelper().askForTakeOrGiveBook(b);
         }
     }
 }

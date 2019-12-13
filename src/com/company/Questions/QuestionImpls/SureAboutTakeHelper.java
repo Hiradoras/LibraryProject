@@ -19,7 +19,7 @@ public class SureAboutTakeHelper implements SureAboutTake {
             int takenBook = Integer.parseInt(bookCode)-1;
             bookGenerator.generateBooks();
             System.out.println("YOU TOOK THE BOOK--> "+books.get(takenBook).getBookName());
-            students.get(5).booksList.add(books.get(takenBook));
+            students.get(students.size()-1).booksList.add(books.get(takenBook));
             books.remove(takenBook);
             Scanner sc = new Scanner(System.in);
             System.out.print("DEAR "+students.get(5).getFirstName()+ " STUDENT WILL YOU GIVE A BOOK[1] OR TAKE A BOOK[2]?\n" +
@@ -29,9 +29,6 @@ public class SureAboutTakeHelper implements SureAboutTake {
         }
         if (a.equals("2")){
             TakeOrGiveBook takeOrGiveBook = new TakeOrGiveBookHelper();
-//            for (int i =0; i<students.get(students.size()-1).booksList.size();i++ ){
-//                System.out.println(students.get(students.size()-1).booksList.get(i).getBookName());
-//            }
             takeOrGiveBook.askForTakeOrGiveBook("1",students,books);
         }
         if (!a.equals("1")&&!a.equals("2")){

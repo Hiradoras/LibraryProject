@@ -19,11 +19,11 @@ public class GiveBookHelper implements GiveBook {
                 new TakeOrGiveBookHelper().askForTakeOrGiveBook("2",students,books);
             }
             else{
-                books.add(students.get(5).booksList.get(Integer.parseInt(n)-1));
-                System.out.println("YOU GIVE BACK "+students.get(5).booksList.get(Integer.parseInt(n)-1).getBookName()+
-                        " by "+students.get(5).booksList.get(Integer.parseInt(n)-1).getAuthor()+
+                books.add(students.get(students.size()-1).booksList.get(Integer.parseInt(n)-1));
+                System.out.println("YOU GIVE BACK "+students.get(students.size()-1).booksList.get(Integer.parseInt(n)-1).getBookName()+
+                        " by "+students.get(students.size()-1).booksList.get(Integer.parseInt(n)-1).getAuthor()+
                         " TO THE LIBRARY");
-                students.get(5).booksList.remove(Integer.parseInt(n)-1);
+                students.get(students.size()-1).booksList.remove(Integer.parseInt(n)-1);
                 Scanner scanner = new Scanner(System.in);
                 System.out.print("DEAR " + students.get(students.size()-1).getFirstName() + " WILL YOU GIVE A BOOK[1] OR TAKE A BOOK[2]?\n" +
                         "TYPE 1 TO GIVE A BOOK AND 2 TO TAKE A BOOK: ");

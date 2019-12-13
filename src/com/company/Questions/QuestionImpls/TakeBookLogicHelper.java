@@ -19,7 +19,6 @@ public class TakeBookLogicHelper implements TakeBookLogic {
 
                 System.out.println("!!!NOT TYPE ANY NUMBER BUT NUMBER THAT YOU SEE!!!");
                 new TakeOrGiveBookHelper().askForTakeOrGiveBook("1",students,books);
-                //takeBookLogicly(n.nextLine(),students,books);
             }else{
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("YOU CHOSE THE-->"+books.get(Integer.parseInt(a)-1).getBookName()+"\nIF YOU ARE SURE ABOUT TAKE ["+
