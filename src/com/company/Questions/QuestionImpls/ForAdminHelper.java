@@ -13,7 +13,6 @@ public class ForAdminHelper implements ForAdmin {
     @Override
     public void seeStudentInfo(String a) {
         StudentGenerator sG = new StudentGeneratorHelper();
-
         boolean numeric = true;
         numeric = a.matches("-?\\d+(\\.\\d+)?");
         if (numeric) {
